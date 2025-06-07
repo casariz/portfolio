@@ -1,0 +1,25 @@
+<section class="container mx-auto pt-24 pb-10 bg-transparent flex flex-row justify-center items-center">
+    <div>
+        <h1 class="text-3xl font-semibold text-black dark:text-white">Ponte en contacto</h1>
+        <p class="mt-4 text-lg text-black dark:text-white">
+            Si deseas ponerte en contacto conmigo:
+        </p>
+        <form action="">
+
+        </form>
+    </div>
+
+
+    <div class="space-y-4 text-neutral-400">
+        <h3 class="text-lg font-semibold text-black dark:text-white">Conectate conmigo:</h3>
+        <div class="flex flex-row space-x-4">
+            @for (item of listContact; track item) {
+            <a [href]="item.link" target="_blank"
+                class="border-1 rounded-4xl p-1 flex items-center space-x-3 hover:text-white transition">
+                <lucide-angular [img]="item.icon" class="my-icon"></lucide-angular>
+            </a>
+            }
+        </div>
+
+    </div>
+</section>

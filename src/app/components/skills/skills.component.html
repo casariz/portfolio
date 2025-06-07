@@ -1,0 +1,36 @@
+<section class="container mt-4 mx-auto p-6 bg-transparent shadow-lg rounded-lg flex flex-col justify-center items-center border-1 border-white">
+    <h2 class="text-3xl font-bold mb-4 text-black dark:text-white">Habilidades</h2>
+    <div class="flex flex-col items-center space-y-4 justify-evenly">
+        <div class="flex flex-wrap gap-2">
+            @for (lang of languages; track lang) {
+            <span class="px-3 py-1 bg-blue-200 rounded-full">{{ lang }}</span>
+            }
+        </div>
+        <div class="flex flex-wrap gap-2">
+            @for (lib of libraries; track lib) {
+            <span class="px-3 py-1 bg-green-200 rounded-full">{{ lib }}</span>
+            }
+        </div>
+        <div class="flex flex-wrap gap-2">
+            @for (db of databases; track db) {
+            <span class="px-3 py-1 bg-purple-200 rounded-full">{{ db }}</span>
+            }
+        </div>
+        <div class="flex flex-wrap gap-2">
+            @for (tool of tools; track tool) {
+            <span class="px-3 py-1 bg-yellow-200 rounded-full">{{ tool }}</span>
+            }
+        </div>
+        <div class="flex flex-wrap gap-2">
+            @for (cloud of clouds; track cloud) {
+            <span class="px-3 py-1 bg-gray-200 rounded-full">{{ cloud }}</span>
+            }
+        </div>
+        <div class="flex flex-wrap gap-2">
+            @for (other of others; track other) {
+            <span class="px-3 py-1 bg-pink-200 rounded-full">{{ other }}</span>
+            }
+        </div>
+    </div>
+
+</section>

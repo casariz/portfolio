@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<nav class="fixed top-0 w-full bg-transparent shadow">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <a routerLink="/" class="font-bold text-xl text-white">¡Saludos!</a>
+    <div class="space-x-4 font-semibold flex items-center">
+      <a routerLink="/"
+        class="px-3 py-1 bg-white text-black rounded-lg shadow-lg hover:bg-gray-200 transition">Inicio</a>
+      <a routerLink="/projects"
+        class="px-3 py-1 bg-white text-black rounded-lg shadow-lg hover:bg-gray-200 transition">Proyectos</a>
+      <a routerLink="/contact"
+        class="px-3 py-1 bg-white text-black rounded-lg shadow-lg hover:bg-gray-200 transition">Contacto</a>
+      <button class="hover:bg-white transition p-2 rounded-4xl text-white hover:text-black">
+        <lucide-angular [img]="Sun" class="my-icon"></lucide-angular>
+      </button>
+    </div>
+
+  </div>
+</nav>
