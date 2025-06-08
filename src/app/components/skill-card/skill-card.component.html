@@ -1,5 +1,5 @@
 <div
-    class="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 hover:border-indigo-200 dark:hover:border-purple-700/50 opacity-100 translate-y-0">
+    class="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 hover:border-indigo-200 dark:hover:border-purple-700/50 h-90">
     <div class="flex items-center gap-3 mb-6">
         <div class="bg-indigo-100 dark:bg-purple-600/20 p-2 rounded-lg">
             <div class="text-indigo-600 dark:text-purple-400">
@@ -8,10 +8,9 @@
         </div>
         <h3 class="text-lg font-bold text-slate-800 dark:text-white">{{skills.title}}</h3>
     </div>
-    <!-- bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-200/50 dark:border-slate-700/50 hover:border-indigo-200 dark:hover:border-purple-700/50 opacity-100 translate-y-0 -->
     <div class="space-y-4">
         @for (skill of skills.skills; track skill) {
-        <div class="transition-all duration-1000" style="transition-delay: 0ms;">
+        <div class="">
             <div class="flex justify-between items-center mb-2">
                 <span class="text-slate-800 dark:text-white font-medium text-sm">
                     {{skill.name}}
