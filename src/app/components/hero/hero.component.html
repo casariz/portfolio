@@ -1,16 +1,47 @@
-<section class="h-screen flex flex-col justify-center items-center text-white">
-  <h1 class="text-5xl font-extrabold">Hola, soy Daniel Casallas</h1>
-  <h1 class="mt-2 text-3xl font-bold">&#64;casariz</h1>
-  <p class="mt-2 text-xl">Desarrollador Backend</p>
-  <a routerLink="/projects"
-    class="mt-8 px-6 py-3 bg-white text-black rounded-lg shadow-lg hover:bg-gray-200 transition">
-    Si quieres ver mis proyectos, haz clic aquí
-  </a>
+<section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+  <div class="text-center z-10 px-4">
+    <div class="animate-fade-in-up">
+      <h1 class="text-5xl md:text-7xl font-bold text-slate-800 dark:text-white mb-3">Hola, soy
+        <span
+          class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 dark:from-purple-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
+          Daniel Casallas
+        </span>
+      </h1>
+      <h1 class="text-3xl font-bold">
+        <span
+          class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 dark:from-purple-400 dark:via-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
+          &#64;casariz
+        </span>
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-600 dark:text-gray-300 max-w-2xl mx-auto mt-4 mb-8">Desarrollador Backend
+        Junior apasionado por crear soluciones robustas y escalables
+      </p>
+      <div class="flex justify-center space-x-6 mb-12">
+        @for (contact of listContact; track contact) {
+        <a routerLink="contact.link" target="_blank" rel="noopener noreferrer"
+          class="text-2xl text-slate-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-purple-400 transition-colors duration-200 hover:scale-110 transform">
+          <lucide-angular [img]="contact.icon" class="w-8 h-8"></lucide-angular>
+        </a>
+        }
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#projects"
+          class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 dark:from-purple-600 dark:via-blue-600 dark:to-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 dark:hover:from-purple-700 dark:hover:via-blue-700 dark:hover:to-indigo-700 transition-all duration-200 hover:scale-105 transform shadow-lg">Ver
+          Proyectos
+        </a>
+        <a href="#contact"
+          class="border-2 border-slate-800 dark:border-white text-slate-800 dark:text-white px-8 py-3 rounded-full font-semibold hover:bg-slate-800 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-200 hover:scale-105 transform">
+          Contactar
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <lucide-angular [img]="ChevronDown"
+      class="lucide lucide-chevron-down text-slate-800 dark:text-white w-8 h-8"></lucide-angular>
+  </div>
 </section>
 
 <app-about></app-about>
-
-<section class="container flex flex-row items-center justify-center mx-auto shadow-lg rounded-lg space-x-4">
-  <app-skills></app-skills>
-  <app-projects></app-projects>
-</section>
+<app-skills></app-skills>
+<app-projects></app-projects>
