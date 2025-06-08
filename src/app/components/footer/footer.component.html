@@ -10,7 +10,7 @@
             <div class="flex flex-row space-x-4">
                 @for (item of listContact; track item) {
                 <a [href]="item.link" target="_blank"
-                    class="border-1 rounded-4xl p-1 flex items-center space-x-3 hover:text-white transition">
+                    class="hover:text-white transition">
                     <lucide-angular [img]="item.icon" class="my-icon"></lucide-angular>
                 </a>
                 }

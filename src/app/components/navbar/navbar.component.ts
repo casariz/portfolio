@@ -11,4 +11,10 @@ export class NavbarComponent {
   readonly Sun = Sun;
   readonly Moon = Moon;
   isDarkMode = false;
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+    document.documentElement.classList.toggle('dark', this.isDarkMode);
+    console.log(`Dark mode is now ${this.isDarkMode ? 'enabled' : 'disabled'}`);
+  }
 }
