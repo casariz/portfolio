@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { SkillCategory } from '../../interfaces/skill';
 import { LucideAngularModule } from 'lucide-angular';
+import { SkillCategory } from '../../../interfaces/skill';
 
 @Component({
   selector: 'app-skill-card',

@@ -8,9 +8,8 @@
         <h1 routerLink="/" class="text-2xl font-bold text-slate-800 dark:text-white">¡Saludos!</h1>
       </div>
       <div class="space-x-4 font-semibold flex items-center">
-        @for (item of navItems; track item) {
-        <a routerLink="item.link"
-          class="text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-slate-100/50 dark:hover:bg-white/10">
+        @for (item of navItems; track item.fragment) {
+        <a (click)="navigateToSection(item.fragment)" class="text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:bg-slate-100/50 dark:hover:bg-white/10">
           {{ item.label }}
         </a>
         }

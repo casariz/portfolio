@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { SkillCardComponent } from '../skill-card/skill-card.component';
 import { Skill, SkillCategory } from '../../interfaces/skill';
 import { LucideAngularModule, Code, Zap, Database, Settings, Cloud, Users } from 'lucide-angular';
+import { SkillCardComponent } from '../../components/cards/skill-card/skill-card.component';
 
 
 @Component({

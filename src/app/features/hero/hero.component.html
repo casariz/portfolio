@@ -18,30 +18,35 @@
       </p>
       <div class="flex justify-center space-x-6 mb-12">
         @for (contact of listContact; track contact) {
-        <a routerLink="contact.link" target="_blank" rel="noopener noreferrer"
+        <a [href]="contact.link" target="_blank" rel="noopener noreferrer"
           class="text-2xl text-slate-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-purple-400 transition-colors duration-200 hover:scale-110 transform">
           <lucide-angular [img]="contact.icon" class="w-8 h-8"></lucide-angular>
         </a>
         }
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#projects"
+        <button
+          (click)="scrollToSection('projects')"
           class="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 dark:from-purple-600 dark:via-blue-600 dark:to-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 dark:hover:from-purple-700 dark:hover:via-blue-700 dark:hover:to-indigo-700 transition-all duration-200 hover:scale-105 transform shadow-lg">Ver
           Proyectos
-        </a>
-        <a href="#contact"
+        </button>
+        <button
+          (click)="scrollToSection('contact')"
           class="border-2 border-slate-800 dark:border-white text-slate-800 dark:text-white px-8 py-3 rounded-full font-semibold hover:bg-slate-800 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-200 hover:scale-105 transform">
           Contactar
-        </a>
+        </button>
       </div>
     </div>
   </div>
   <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <lucide-angular [img]="ChevronDown"
-      class="lucide lucide-chevron-down text-slate-800 dark:text-white w-8 h-8"></lucide-angular>
+    <button (click)="scrollToSection('about')">
+      <lucide-angular [img]="ChevronDown"
+        class="lucide lucide-chevron-down text-slate-800 dark:text-white w-8 h-8"></lucide-angular>
+    </button>
   </div>
 </section>
 
 <app-about></app-about>
 <app-skills></app-skills>
+<app-experience></app-experience>
 <app-projects></app-projects>
