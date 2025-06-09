@@ -14,8 +14,6 @@ export class CardExperienceComponent {
   readonly mapPin = MapPin;
   readonly calendar = Calendar;
 
-  
-
   @Input() experience!: Experience;
   @Input() index!: number;
 }
