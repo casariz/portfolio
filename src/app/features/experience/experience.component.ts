@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { Experience } from '../../interfaces/experience';
 import { CardExperienceComponent } from '../../components/cards/card-experience/card-experience.component';
+import { LucideAngularModule, Download } from 'lucide-angular';
 
 @Component({
   selector: 'app-experience',
-  imports: [CardExperienceComponent],
+  imports: [CardExperienceComponent, LucideAngularModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })
 export class ExperienceComponent {
+  readonly downloadIcon = Download;
 
   experiences: Experience[] = [
     {
