@@ -1,20 +1,28 @@
-<footer class="w-full bg-transparent shadow mt-5">
+<footer
+    class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm py-12 px-4 border-t border-slate-200/50 dark:border-slate-700/50">
+    <div class="max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-2">Daniel Casallas</h3>
+                <p class="text-slate-600 dark:text-gray-300">Desarrollador Backend Junior</p>
+            </div>
 
-    <div class="container mx-auto px-4 py-8 flex justify-around text-neutral-400">
-        <div class="space-y-4">
-            <h3 class="text-lg font-semibold text-black dark:text-white">Portafolio</h3>
-            <p class="text-sm text-foreground/60">© <!-- -->2025<!-- --> Daniel Casallas.</p>
-        </div>
-        <div class="space-y-4">
-            <h3 class="text-lg font-semibold text-black dark:text-white">Conectate conmigo:</h3>
-            <div class="flex flex-row space-x-4">
+            <div class="flex space-x-6 mb-6 md:mb-0">
                 @for (item of listContact; track item) {
                 <a [href]="item.link" target="_blank"
-                    class="hover:text-white transition">
-                    <lucide-angular [img]="item.icon" class="my-icon"></lucide-angular>
+                    class="text-2xl text-slate-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 hover:scale-115 transform">
+                    <lucide-angular [img]="item.icon" class="w-6 h-6"></lucide-angular>
                 </a>
                 }
             </div>
         </div>
+        <div class="border-t border-slate-200 dark:border-slate-700 pt-8 mt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-600 dark:text-gray-300 text-sm mb-4 md:mb-0">
+                    © 2025 Portfolio. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
     </div>
+
 </footer>

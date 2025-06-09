@@ -4,10 +4,11 @@ import { AboutComponent } from '../about/about.component';
 import { LucideAngularModule, Github, Linkedin, Mail, Send, ChevronDown } from 'lucide-angular';
 import { SkillsComponent } from '../skills/skills.component';
 import { ExperienceComponent } from '../experience/experience.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-hero',
-  imports: [AboutComponent, SkillsComponent, ExperienceComponent, ProjectsComponent, LucideAngularModule],
+  imports: [AboutComponent, SkillsComponent, ExperienceComponent, ProjectsComponent, ContactComponent, LucideAngularModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })

@@ -24,14 +24,14 @@ export class NavbarComponent {
 
   navItems = [
     { label: 'Inicio', fragment: 'hero' },
+    { label: 'Proyectos', fragment: 'projects' },
     { label: 'Acerca', fragment: 'about' },
     { label: 'Habilidades', fragment: 'skills' },
     { label: 'Experiencia', fragment: 'experience' },
-    { label: 'Proyectos', fragment: 'projects' },
     { label: 'Contacto', fragment: 'contact' }
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   toggleDarkMode() {
     this.isDarkMode = !this.isDarkMode;
@@ -47,7 +47,7 @@ export class NavbarComponent {
       setTimeout(() => {
         const element = document.getElementById(fragment);
         if (element) {
-          element.scrollIntoView({ 
+          element.scrollIntoView({
             behavior: 'smooth',
             block: 'start',
             inline: 'nearest'

@@ -14,30 +14,31 @@ export class ExperienceComponent {
 
   experiences: Experience[] = [
     {
-      title: "Desarrollador Backend Junior",
-      company: "Proyecto Personal / Freelance",
+      title: "Practicante de desarrollo Full Stack",
+      company: "Vivero el Rosal S.A.S",
       location: "Colombia",
-      period: "2024 - Presente (6 meses)",
+      period: "2024 (6 meses)",
       description: [
-        "Desarrollo de APIs REST utilizando Node.js y Express.js para aplicaciones web.",
-        "Implementación de bases de datos MongoDB y PostgreSQL con esquemas optimizados.",
-        "Creación de sistemas de autenticación y autorización seguros con JWT.",
-        "Integración de servicios externos y APIs de terceros para funcionalidades avanzadas.",
+        "Desarrollo de platarforma para administrar torneos de futbol que se hacían semestralmente en la empresa.",
+        "Implementación y corrección de módulos ya implementados en el CRM del Vivero.",
+        "Creación de aplicación web para la gestión de reuniones y tareas para la asociación de viveristas.",
+        "Creación de app móvil con Ionic/Angular para el manejo de viáticos dados a los conductores.",
+        "Uso de bases de datos de la empresa, creación de tablas y normalización de las mismas para el uso de las apps anteriormente mencionadas.",
       ],
-      skills: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "JWT"],
+      skills: ["Angular", "Laravel", "MySQL", "Ionic", "Git"],
     },
     {
-      title: "Estudiante de Desarrollo Backend",
-      company: "Aprendizaje Autodidacta",
+      title: "Estudiante de Ingeniería de Sistemas y Computación",
+      company: "Univesidad del Valle",
       location: "Colombia",
-      period: "2023 - 2024",
+      period: "2020 - Presente",
       description: [
         "Completé cursos especializados en desarrollo backend y arquitectura de software.",
         "Desarrollé proyectos personales para practicar conceptos de bases de datos y APIs.",
         "Aprendí sobre patrones de diseño, clean code y mejores prácticas de desarrollo.",
-        "Participé en comunidades de desarrolladores y contribuí a proyectos open source.",
+        "Participé en comunidades de desarrolladores y contribuí a proyectos de final de curso.",
       ],
-      skills: ["JavaScript", "Python", "Git", "Docker", "Linux"],
+      skills: ["JavaScript", "Python", "Git", "Docker", "Linux", "SQL" , "NoSQL"],
     },
   ]
 }

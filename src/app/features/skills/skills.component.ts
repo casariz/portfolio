@@ -19,7 +19,7 @@ export class SkillsComponent {
   readonly Users = Users;
   skills: SkillCategory[] = [
     {
-      title: "Lenguajes de Programación",
+      title: "Lenguajes de programación",
       icon: Code,
       skills: [
         { name: "JavaScript", level: 85, color: "from-yellow-500 to-orange-500" },
@@ -30,7 +30,7 @@ export class SkillsComponent {
       ],
     },
     {
-      title: "Frameworks & Librerías",
+      title: "Frameworks y librerías",
       icon: Zap,
       skills: [
         { name: "Angular", level: 80, color: "from-red-600 to-pink-600" },
@@ -41,7 +41,7 @@ export class SkillsComponent {
       ],
     },
     {
-      title: "Bases de Datos",
+      title: "Bases de datos",
       icon: Database,
       skills: [
         { name: "PostgreSQL", level: 75, color: "from-blue-600 to-indigo-600" },
@@ -50,7 +50,7 @@ export class SkillsComponent {
       ],
     },
     {
-      title: "Herramientas & DevOps",
+      title: "Herramientas y DevOps",
       icon: Settings,
       skills: [
         { name: "Git", level: 85, color: "from-orange-500 to-red-500" },
@@ -60,7 +60,7 @@ export class SkillsComponent {
       ],
     },
     {
-      title: "Plataformas Cloud",
+      title: "Plataformas cloud",
       icon: Cloud,
       skills: [
         { name: "AWS", level: 65, color: "from-orange-400 to-yellow-500" },
@@ -69,7 +69,7 @@ export class SkillsComponent {
       ],
     },
     {
-      title: "Metodologías & Otros",
+      title: "Metodologías y otros",
       icon: Users,
       skills: [
         { name: "RESTful APIs", level: 85, color: "from-green-500 to-teal-500" },
