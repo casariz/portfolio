@@ -19,7 +19,7 @@
       <div class="flex justify-center space-x-6 mb-12">
         @for (contact of listContact; track contact) {
         <a [href]="contact.link" target="_blank" rel="noopener noreferrer"
-          class="text-2xl text-slate-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-white transition-colors duration-200 hover:scale-110 transform">
+          class="text-2xl text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-200 hover:scale-110 transform">
           <lucide-angular [img]="contact.icon" class="w-8 h-8"></lucide-angular>
         </a>
         }
@@ -44,8 +44,9 @@
   </div>
 </section>
 
-<app-projects></app-projects>
-<app-about></app-about>
-<app-skills></app-skills>
+
 <app-experience></app-experience>
+<app-projects></app-projects>
+<app-skills></app-skills>
+<app-about></app-about>
 <app-contact></app-contact>

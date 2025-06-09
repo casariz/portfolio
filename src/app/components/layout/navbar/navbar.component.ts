@@ -1,42 +1,39 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
-import { LucideAngularModule, Sun, Moon } from 'lucide-angular';
+import { LucideAngularModule, X, Menu } from 'lucide-angular';
+import { ThemeToggleComponent } from '../../../features/theme-toggle/theme-toggle.component';
 
 @Component({
   selector: 'app-navbar',
-  imports: [LucideAngularModule, CommonModule],
+  imports: [LucideAngularModule, CommonModule, ThemeToggleComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
-  scrolled = false;
-
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.scrolled = window.scrollY > 10;
+    this.scrolled = window.scrollY > 50;
   }
 
-  readonly Sun = Sun;
-  readonly Moon = Moon;
-  isDarkMode = false;
+  readonly X = X;
+  readonly Menu = Menu;
+  isOpen = false;
+  scrolled = false;
 
   navItems = [
     { label: 'Inicio', fragment: 'hero' },
-    { label: 'Proyectos', fragment: 'projects' },
-    { label: 'Acerca', fragment: 'about' },
-    { label: 'Habilidades', fragment: 'skills' },
     { label: 'Experiencia', fragment: 'experience' },
+    { label: 'Proyectos', fragment: 'projects' },
+    { label: 'Habilidades', fragment: 'skills' },
+    { label: 'Sobre mí', fragment: 'about' },
     { label: 'Contacto', fragment: 'contact' }
   ];
 
   constructor(private router: Router) { }
 
-  toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-    document.documentElement.classList.toggle('dark', this.isDarkMode);
-    console.log(`Dark mode is now ${this.isDarkMode ? 'enabled' : 'disabled'}`);
+  openMenu() {
+    this.isOpen = !this.isOpen;
   }
 
   // Método para navegación con fragmentos
@@ -55,5 +52,9 @@ export class NavbarComponent {
         }
       }, 100);
     });
+
+    if (this.isOpen) {
+      this.openMenu()
+    }
   }
 }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Experience } from '../../interfaces/experience';
 import { CardExperienceComponent } from '../../components/cards/card-experience/card-experience.component';
 import { LucideAngularModule, Download } from 'lucide-angular';
+import { saveAs } from 'file-saver';
+import { DownloadService } from '../../services/download.service';
 
 @Component({
   selector: 'app-experience',
@@ -38,7 +40,14 @@ export class ExperienceComponent {
         "Aprendí sobre patrones de diseño, clean code y mejores prácticas de desarrollo.",
         "Participé en comunidades de desarrolladores y contribuí a proyectos de final de curso.",
       ],
-      skills: ["JavaScript", "Python", "Git", "Docker", "Linux", "SQL" , "NoSQL"],
+      skills: ["JavaScript", "Python", "Git", "Docker", "Linux", "SQL", "NoSQL"],
     },
   ]
+
+  constructor(private downloadSvc: DownloadService) { }
+
+  downloadCV() {
+    this.downloadSvc.downloadFile('/Daniel_Casallas_CV.pdf')
+      .subscribe((blob: any) => saveAs(blob, 'Daniel_Casallas_CV.pdf'));
+  }
 }

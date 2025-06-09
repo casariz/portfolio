@@ -18,11 +18,11 @@
                 }
             </div>
             <div class="mt-12 text-center space-y-4">
-                <a href=""
+                <button (click)="downloadCV()"
                     class="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 dark:from-purple-600 dark:via-blue-600 dark:to-indigo-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-indigo-700 hover:via-purple-700 hover:to-blue-700 dark:hover:from-purple-700 dark:hover:via-blue-700 dark:hover:to-indigo-700 transition-all duration-200 hover:scale-105 transform shadow-lg">
                     <lucide-angular [img]="downloadIcon"></lucide-angular>
                     Descargar CV
-                </a>
+            </button>
                 <p class="text-slate-600 dark:text-gray-300 text-sm">
                     Descarga mi CV en formato PDF
                 </p>
