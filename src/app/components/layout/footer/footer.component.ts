@@ -13,7 +13,7 @@ export class FooterComponent {
   readonly Send = Send;
   readonly Mail = Mail;
   listContact = [
-    { icon: this.Github, link: 'https://www.github/casariz' },
+    { icon: this.Github, link: 'https://www.github.com/casariz' },
     { icon: this.Linkedin, link: 'https://www.linkedin.com/in/daniel-felipe-casallas-ortiz/' },
     { icon: this.Send, link: 'https://t.me/casariz' },
     { icon: this.Mail, link: 'mailto:danielfelipedfco@gmail.com' }

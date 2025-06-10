@@ -5,37 +5,36 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class ThemeService {
-
-  private _isDarkMode = new BehaviorSubject<boolean>(false);
-  isDarkMode$ = this._isDarkMode.asObservable();
-
+  private isDarkModeSubject = new BehaviorSubject<boolean>(false);
+  public isDarkMode$ = this.isDarkModeSubject.asObservable();
 
   constructor() {
-    this.loadTheme();
+    // Verificar si hay un tema guardado en localStorage
+    const savedTheme = localStorage.getItem('theme');
+    const isDark = savedTheme === 'dark' || 
+      (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    this.setTheme(isDark);
   }
 
-  toggleTheme() {
-    this._isDarkMode.next(!this._isDarkMode.value);
-    this.saveTheme();
+  toggleTheme(): void {
+    const currentTheme = this.isDarkModeSubject.value;
+    this.setTheme(!currentTheme);
   }
 
-  private saveTheme() {
-    localStorage.setItem('theme', this._isDarkMode.value ? 'dark' : 'light');
-    this.updateTheme();
-  }
-
-  private loadTheme() {
-    const storedTheme = localStorage.getItem('theme');
-    this._isDarkMode.next(storedTheme === 'dark');
-    this.updateTheme();
-  }
-
-  private updateTheme() {
-    const body = document.body;
-    if (this._isDarkMode.value) {
-      body.classList.add('dark');
+  private setTheme(isDark: boolean): void {
+    this.isDarkModeSubject.next(isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    
+    // Aplicar clase al documento
+    if (isDark) {
+      document.documentElement.classList.add('dark');
     } else {
-      body.classList.remove('dark');
+      document.documentElement.classList.remove('dark');
     }
+  }
+
+  get isDarkMode(): boolean {
+    return this.isDarkModeSubject.value;
   }
 }

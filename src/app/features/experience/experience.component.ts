@@ -4,10 +4,11 @@ import { CardExperienceComponent } from '../../components/cards/card-experience/
 import { LucideAngularModule, Download } from 'lucide-angular';
 import { saveAs } from 'file-saver';
 import { DownloadService } from '../../services/download.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-experience',
-  imports: [CardExperienceComponent, LucideAngularModule],
+  imports: [CardExperienceComponent, LucideAngularModule, CommonModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.css'
 })

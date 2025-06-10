@@ -1,0 +1,154 @@
+/* Animated starfield backgrounds */
+.starfield-bg-dark-animated {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #0c0c1d 0%,
+    #1a1a2e 20%,
+    #16213e 40%,
+    #1a1a2e 60%,
+    #0f0f23 80%,
+    #0a0a18 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease-in-out infinite;
+  z-index: -100;
+  pointer-events: none;
+}
+
+.starfield-bg-light-animated {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e2e8f0 20%,
+    #cbd5e1 40%,
+    #e2e8f0 60%,
+    #94a3b8 80%,
+    #64748b 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 20s ease-in-out infinite;
+  z-index: -100;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Constellation lines */
+.constellation-lines-animated {
+  overflow: hidden;
+}
+
+.constellation-line-animated-1,
+.constellation-line-animated-2,
+.constellation-line-animated-3 {
+  position: absolute;
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(59, 130, 246, 0.7) 50%,
+    transparent 100%
+  );
+  animation: float 15s ease-in-out infinite;
+  border-radius: 1px;
+}
+
+.constellation-line-animated-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+  transform: rotate(30deg);
+}
+
+.constellation-line-animated-2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 5s;
+  transform: rotate(-45deg);
+}
+
+.constellation-line-animated-3 {
+  top: 80%;
+  left: 30%;
+  animation-delay: 10s;
+  transform: rotate(15deg);
+}
+
+@keyframes float {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateY(0px) rotate(var(--initial-rotation, 0deg));
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-30px) rotate(calc(var(--initial-rotation, 0deg) + 10deg));
+  }
+}
+
+/* Interactive glow effect */
+.star-glow-animated {
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.4) 0%,
+    rgba(147, 51, 234, 0.3) 30%,
+    rgba(59, 130, 246, 0.1) 60%,
+    transparent 100%
+  );
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: pulse 1s ease-in-out infinite;
+  transition: all 0.1s ease;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+/* Dark theme adjustments */
+.dark .constellation-line-animated-1,
+.dark .constellation-line-animated-2,
+.dark .constellation-line-animated-3 {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.dark .star-glow-animated {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(59, 130, 246, 0.15) 30%,
+    transparent 70%
+  );
+}

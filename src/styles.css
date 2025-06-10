@@ -1,14 +1,446 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
-
 @custom-variant dark (&:where(.dark, .dark *));
 
-html {
-    scroll-behavior: smooth;
+
+/* Configuración global para el fondo animado */
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-body {
-    overflow-x: hidden;
-    transition: background-color 0.3s ease;
-    font-family: 'Inter', sans-serif;
+/* Asegurar que el contenido esté por encima del fondo */
+app-root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Transiciones suaves para el cambio de tema */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para modo oscuro */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  background-color: #0a0a18;
+  color: #f8fafc;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        overflow-x: hidden;
+        transition: background-color 0.3s ease;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@layer utilities {
+    .animate-fade-in-up {
+        animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Animated starfield backgrounds */
+    .starfield-bg-dark-animated {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: radial-gradient(ellipse at 20% 50%, #1a1a2e 0%, #16213e 25%, #0f0f23 50%),
+            radial-gradient(ellipse at 80% 20%, #16213e 0%, #1a1a2e 25%, #0f0f23 50%),
+            radial-gradient(ellipse at 40% 80%, #0f0f23 0%, #16213e 25%, #1a1a2e 50%);
+        background-size: 200% 200%, 180% 180%, 220% 220%;
+        animation: cosmicDrift 60s ease-in-out infinite, nebulaPulse 20s ease-in-out infinite alternate;
+        will-change: background-position;
+        transform: translateZ(0);
+    }
+
+    .starfield-bg-light-animated {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: radial-gradient(ellipse at 30% 40%, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%),
+            radial-gradient(ellipse at 70% 30%, #e2e8f0 0%, #f8fafc 25%, #cbd5e1 50%),
+            radial-gradient(ellipse at 50% 70%, #cbd5e1 0%, #e2e8f0 25%, #f8fafc 50%);
+        background-size: 200% 200%, 180% 180%, 220% 220%;
+        animation: cosmicDrift 60s ease-in-out infinite, nebulaPulse 20s ease-in-out infinite alternate;
+        will-change: background-position;
+        transform: translateZ(0);
+    }
+
+    @keyframes cosmicDrift {
+
+        0%,
+        100% {
+            background-position: 0% 50%, 100% 0%, 50% 100%;
+        }
+
+        25% {
+            background-position: 100% 0%, 0% 100%, 100% 50%;
+        }
+
+        50% {
+            background-position: 50% 100%, 50% 50%, 0% 0%;
+        }
+
+        75% {
+            background-position: 0% 0%, 100% 100%, 50% 0%;
+        }
+    }
+
+    @keyframes nebulaPulse {
+        0% {
+            opacity: 0.8;
+            transform: scale(1);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    }
+
+    /* Animated constellation lines */
+    .constellation-lines-animated {
+        will-change: transform;
+        transform: translateZ(0);
+    }
+
+    .constellation-line-animated-1,
+    .constellation-line-animated-2,
+    .constellation-line-animated-3 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        will-change: transform;
+        transform: translateZ(0);
+        opacity: 0.15;
+        animation: constellationFloat 30s ease-in-out infinite;
+    }
+
+    .constellation-line-animated-1 {
+        background-image: linear-gradient(45deg,
+                transparent 49%,
+                rgba(255, 255, 255, 0.4) 49.5%,
+                rgba(255, 255, 255, 0.4) 50.5%,
+                transparent 51%),
+            linear-gradient(-45deg,
+                transparent 49%,
+                rgba(173, 216, 230, 0.3) 49.5%,
+                rgba(173, 216, 230, 0.3) 50.5%,
+                transparent 51%);
+        background-size: 800px 800px, 600px 600px;
+        background-position: 20% 30%, 80% 70%;
+        animation-delay: 0s;
+    }
+
+    .constellation-line-animated-2 {
+        background-image: linear-gradient(30deg,
+                transparent 49%,
+                rgba(255, 182, 193, 0.3) 49.5%,
+                rgba(255, 182, 193, 0.3) 50.5%,
+                transparent 51%),
+            linear-gradient(-60deg,
+                transparent 49%,
+                rgba(221, 160, 221, 0.3) 49.5%,
+                rgba(221, 160, 221, 0.3) 50.5%,
+                transparent 51%);
+        background-size: 700px 700px, 500px 500px;
+        background-position: 60% 20%, 40% 80%;
+        animation-delay: -10s;
+    }
+
+    .constellation-line-animated-3 {
+        background-image: linear-gradient(60deg,
+                transparent 49%,
+                rgba(255, 255, 224, 0.2) 49.5%,
+                rgba(255, 255, 224, 0.2) 50.5%,
+                transparent 51%),
+            linear-gradient(-30deg,
+                transparent 49%,
+                rgba(135, 206, 235, 0.2) 49.5%,
+                rgba(135, 206, 235, 0.2) 50.5%,
+                transparent 51%);
+        background-size: 900px 900px, 400px 400px;
+        background-position: 30% 60%, 70% 40%;
+        animation-delay: -20s;
+    }
+
+    @keyframes constellationFloat {
+
+        0%,
+        100% {
+            transform: translateX(0) translateY(0) rotate(0deg);
+            opacity: 0.15;
+        }
+
+        25% {
+            transform: translateX(10px) translateY(-5px) rotate(1deg);
+            opacity: 0.25;
+        }
+
+        50% {
+            transform: translateX(-5px) translateY(10px) rotate(-0.5deg);
+            opacity: 0.2;
+        }
+
+        75% {
+            transform: translateX(5px) translateY(-10px) rotate(0.5deg);
+            opacity: 0.3;
+        }
+    }
+
+    /* Dark mode adjustments for constellation lines */
+    .dark .constellation-line-animated-1 {
+        background-image: linear-gradient(45deg,
+                transparent 49%,
+                rgba(148, 163, 184, 0.5) 49.5%,
+                rgba(148, 163, 184, 0.5) 50.5%,
+                transparent 51%),
+            linear-gradient(-45deg,
+                transparent 49%,
+                rgba(173, 216, 230, 0.4) 49.5%,
+                rgba(173, 216, 230, 0.4) 50.5%,
+                transparent 51%);
+    }
+
+    .dark .constellation-line-animated-2 {
+        background-image: linear-gradient(30deg,
+                transparent 49%,
+                rgba(255, 182, 193, 0.4) 49.5%,
+                rgba(255, 182, 193, 0.4) 50.5%,
+                transparent 51%),
+            linear-gradient(-60deg,
+                transparent 49%,
+                rgba(221, 160, 221, 0.4) 49.5%,
+                rgba(221, 160, 221, 0.4) 50.5%,
+                transparent 51%);
+    }
+
+    .dark .constellation-line-animated-3 {
+        background-image: linear-gradient(60deg,
+                transparent 49%,
+                rgba(255, 255, 224, 0.3) 49.5%,
+                rgba(255, 255, 224, 0.3) 50.5%,
+                transparent 51%),
+            linear-gradient(-30deg,
+                transparent 49%,
+                rgba(135, 206, 235, 0.3) 49.5%,
+                rgba(135, 206, 235, 0.3) 50.5%,
+                transparent 51%);
+    }
+
+    /* Enhanced animated star glow effect */
+    .star-glow-animated {
+        border-radius: 50%;
+        background: radial-gradient(circle,
+                rgba(255, 255, 255, 0.2) 0%,
+                rgba(173, 216, 230, 0.15) 30%,
+                rgba(255, 182, 193, 0.1) 60%,
+                transparent 80%);
+        transition: opacity 0.3s ease-out;
+        will-change: transform, opacity;
+        transform: translateZ(0);
+        filter: blur(30px);
+        animation: glowPulse 3s ease-in-out infinite, glowRotate 10s linear infinite;
+    }
+
+    .dark .star-glow-animated {
+        background: radial-gradient(circle,
+                rgba(255, 255, 255, 0.25) 0%,
+                rgba(173, 216, 230, 0.2) 30%,
+                rgba(255, 182, 193, 0.15) 60%,
+                transparent 80%);
+    }
+
+    @keyframes glowPulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 0.6;
+        }
+
+        50% {
+            transform: scale(1.2);
+            opacity: 0.9;
+        }
+    }
+
+    @keyframes glowRotate {
+        0% {
+            filter: blur(30px) hue-rotate(0deg);
+        }
+
+        100% {
+            filter: blur(30px) hue-rotate(360deg);
+        }
+    }
+
+    /* Dust particle animations */
+    @keyframes dustFloat {
+
+        0%,
+        100% {
+            transform: translateY(0) translateX(0) rotate(0deg);
+        }
+
+        25% {
+            transform: translateY(-5px) translateX(3px) rotate(2deg);
+        }
+
+        50% {
+            transform: translateY(5px) translateX(-3px) rotate(-2deg);
+        }
+
+        75% {
+            transform: translateY(-3px) translateX(-5px) rotate(1deg);
+        }
+    }
+
+    @keyframes dustGlow {
+
+        0%,
+        100% {
+            opacity: 0.2;
+            filter: blur(2px);
+        }
+
+        50% {
+            opacity: 0.4;
+            filter: blur(3px);
+        }
+    }
+
+    /* Canvas optimizations */
+    canvas {
+        image-rendering: optimizeSpeed;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+        transform: translateZ(0);
+        will-change: transform;
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+
+    /* Performance optimizations */
+    .gpu-accelerated {
+        transform: translateZ(0);
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+    }
+
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+
+        .starfield-bg-dark-animated,
+        .starfield-bg-light-animated {
+            animation: none;
+        }
+
+        .constellation-line-animated-1,
+        .constellation-line-animated-2,
+        .constellation-line-animated-3 {
+            animation: none;
+            transform: none !important;
+        }
+
+        .star-glow-animated {
+            animation: none;
+        }
+
+        canvas {
+            display: none;
+        }
+    }
+
+    /* Additional starfield animations */
+    @keyframes twinkleEnhanced {
+
+        0%,
+        100% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+
+        25% {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        75% {
+            opacity: 0.6;
+            transform: scale(1.05);
+        }
+    }
+
+    @keyframes shootingStarEnhanced {
+        0% {
+            transform: translateX(-200px) translateY(-200px) scale(0);
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        90% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(calc(100vw + 200px)) translateY(calc(100vh + 200px)) scale(0.5);
+            opacity: 0;
+        }
+    }
+
+    /* Nebula effects */
+    @keyframes nebulaSwirl {
+        0% {
+            transform: rotate(0deg) scale(1);
+        }
+
+        50% {
+            transform: rotate(180deg) scale(1.1);
+        }
+
+        100% {
+            transform: rotate(360deg) scale(1);
+        }
+    }
 }
