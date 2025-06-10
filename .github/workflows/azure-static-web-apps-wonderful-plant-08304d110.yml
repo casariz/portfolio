@@ -11,6 +11,7 @@ on:
 
 jobs:
   build_and_deploy_job:
+    skip_app_build: true
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
@@ -41,7 +42,7 @@ jobs:
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
-          skip_app_build: true
+          
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_PLANT_08304D110 }}
           action: "upload"
           app_location: "/" # App source code path
