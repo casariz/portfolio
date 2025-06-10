@@ -13,4 +13,25 @@ export class ProjectCardComponent {
   readonly externalLinkIcon = ExternalLink;
   
   @Input() project!: Project;
+  isSimpleGithubUrl(): boolean {
+    return typeof this.project.githubUrl === 'string';
+  }
+
+  isMultipleGithubUrl(): boolean {
+    return typeof this.project.githubUrl === 'object' && this.project.githubUrl !== null;
+  }
+
+  get frontendUrl(): string | undefined {
+    if (this.isMultipleGithubUrl()) {
+      return (this.project.githubUrl as { frontend?: string; backend?: string }).frontend;
+    }
+    return undefined;
+  }
+
+  get backendUrl(): string | undefined {
+    if (this.isMultipleGithubUrl()) {
+      return (this.project.githubUrl as { frontend?: string; backend?: string }).backend;
+    }
+    return undefined;
+  }
 }

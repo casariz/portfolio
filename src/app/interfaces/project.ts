@@ -3,6 +3,6 @@ export interface Project {
     description: string
     image: string
     technologies: string[]
-    githubUrl?: string
+    githubUrl?: string | { frontend?: string; backend?: string }
     liveUrl?: string
 }
