@@ -1,9 +1,9 @@
 <button (click)="toggleTheme()"
     class="p-2 rounded-full bg-white/10 dark:bg-slate-800/50 backdrop-blur-sm border border-white/20 dark:border-slate-700 hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200 hover:scale-110 transform">
     @if (!isDarkMode) {
-        <lucide-angular [img]="Moon" class="lucide lucide-moon w-5 h-5 text-gray-600 hover:text-gray-700"></lucide-angular>
+    <lucide-angular [img]="Moon" class="lucide lucide-moon w-5 h-5 text-gray-600 hover:text-gray-700"></lucide-angular>
     } @else {
-        <lucide-angular [img]="Sun" class="lucide lucide-sun w-5 h-5 text-yellow-400"></lucide-angular>
+    <lucide-angular [img]="Sun" class="lucide lucide-sun w-5 h-5 text-yellow-400"></lucide-angular>
     }
-    
+
 </button>

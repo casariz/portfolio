@@ -20,7 +20,7 @@ export class ExperienceComponent {
       title: "Practicante de desarrollo Full Stack",
       company: "Vivero el Rosal S.A.S",
       location: "Colombia",
-      period: "2024 (6 meses)",
+      period: "Marzo 2024 - Marzo 2025",
       description: [
         "Desarrollo de platarforma para administrar torneos de futbol que se hacían semestralmente en la empresa.",
         "Implementación y corrección de módulos ya implementados en el CRM del Vivero.",
