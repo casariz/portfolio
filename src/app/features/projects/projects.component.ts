@@ -13,7 +13,7 @@ export class ProjectsComponent {
     {
       title: 'SV - Rosal (Sistema vehicular)',
       description: 'Aplicación web y móvil para la gestión de viaticos, diseñada para facilitar el seguimiento de rutas, registro de recaudos, registro de gastos y facturaciones que tenian los conductores del vivero al momento de realizar sus viajes.',
-      image: 'svrosal.png',
+      image: 'svrosal.jpg',
       technologies: ['Angular', 'TypeScript', 'CSS', 'Ionic', 'Laravel', 'MySQL'],
       githubUrl: {
         frontend: 'https://github.com/casariz/SV-Frontend',
