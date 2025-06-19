@@ -13,7 +13,7 @@ export class ProjectsComponent {
     {
       title: 'SV - Rosal (Sistema vehicular)',
       description: 'Aplicación web y móvil para la gestión de viaticos, diseñada para facilitar el seguimiento de rutas, registro de recaudos, registro de gastos y facturaciones que tenian los conductores del vivero al momento de realizar sus viajes.',
-      image: 'assets/images/portfolio.png',
+      image: 'svrosal.png',
       technologies: ['Angular', 'TypeScript', 'CSS', 'Ionic', 'Laravel', 'MySQL'],
       githubUrl: {
         frontend: 'https://github.com/casariz/SV-Frontend',
@@ -35,7 +35,7 @@ export class ProjectsComponent {
     {
       title: 'Asovalvi',
       description: 'Web para la Asociación de Viveros en el Valle del Cauca, diseñada para facilitar la comunicación y gestión de eventos entre sus miembros, así como las tareas de los mismos.',
-      image: 'assets/images/portfolio.png',
+      image: 'asovalvi.png',
       technologies: ['Angular', 'TypeScript', 'CSS', 'Laravel', 'MySQL'],
       githubUrl: {
         frontend: 'https://github.com/casariz/asociacion-viveros',
