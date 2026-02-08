@@ -1,0 +1,19 @@
+<section id="projects" class="py-20 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="transition-all duration-1000">
+            <app-section-title [beforeGradient]="t().projects.title" [gradientText]="t().projects.titleHighlight"></app-section-title>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @for (project of projects(); track project; let i = $index) {
+                <div appScrollReveal animationClass="scale-in" [delay]="i * 100">
+                    <app-project-card [project]="project"></app-project-card>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+
+</section>

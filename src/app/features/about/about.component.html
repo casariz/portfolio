@@ -1,0 +1,30 @@
+<section id="about" class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div class="transition-all duration-1000 opacity-100 translate-y-0">
+            <app-section-title [beforeGradient]="t().about.title" [gradientText]="t().about.titleHighlight"></app-section-title>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6" appScrollReveal animationClass="fade-in-left" [delay]="200">
+                    <p class="text-lg text-slate-600 dark:text-gray-300 leading-relaxed">
+                        {{ t().about.paragraph1 }}</p>
+                    <p class="text-lg text-slate-600 dark:text-gray-300 leading-relaxed">{{ t().about.paragraph2 }}</p>
+                            <div class="flex flex-wrap gap-4"><span
+                                    class="tag-primary px-4 py-2">{{ t().about.tags.backend }}</span><span
+                                    class="bg-teal-100 dark:bg-cyan-600/20 text-teal-700 dark:text-cyan-300 px-4 py-2 rounded-full text-sm">{{ t().about.tags.apis }}</span><span
+                                    class="bg-cyan-100 dark:bg-emerald-600/20 text-cyan-700 dark:text-emerald-300 px-4 py-2 rounded-full text-sm">{{ t().about.tags.databases }}</span></div>
+                </div>
+                <div class="relative" appScrollReveal animationClass="fade-in-right" [delay]="400">
+                    <div
+                        class="w-80 h-80 mx-auto bg-gradient-to-br from-emerald-200 via-teal-200 to-cyan-200 dark:from-teal-600 dark:via-cyan-600 dark:to-emerald-600 rounded-full opacity-20 animate-pulse">
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="w-64 h-64 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 dark:from-teal-500 dark:via-cyan-500 dark:to-emerald-500 rounded-full flex items-center justify-center">
+                            <span class="text-6xl">👨‍💻</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

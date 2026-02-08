@@ -1,0 +1,36 @@
+<!-- Animated starfield gradient background -->
+<div [class]="isDarkTheme ? 'starfield-bg-dark-animated' : 'starfield-bg-light-animated'"></div>
+
+<!-- Stars canvas -->
+<canvas
+  #canvasRef
+  class="fixed inset-0 pointer-events-none"
+  style="z-index: -1; display: block;">
+</canvas>
+
+<!-- Animated constellation lines -->
+<div class="fixed inset-0 pointer-events-none z-[-1] constellation-lines-animated">
+  <div
+    class="constellation-line-animated-1"
+    [style.transform]="'translateY(' + (scrollPosition * 0.03) + 'px) rotate(' + (currentTime * 0.1) + 'deg)'">
+  </div>
+  <div
+    class="constellation-line-animated-2"
+    [style.transform]="'translateY(' + (-scrollPosition * 0.02) + 'px) rotate(' + (-currentTime * 0.08) + 'deg)'">
+  </div>
+  <div
+    class="constellation-line-animated-3"
+    [style.transform]="'translateX(' + (scrollPosition * 0.01) + 'px) rotate(' + (currentTime * 0.05) + 'deg)'">
+  </div>
+</div>
+
+<!-- Enhanced interactive glow effect -->
+@if (isInteracting) {
+  <div
+    class="pointer-events-none fixed z-[-1] star-glow-animated"
+    [style.left.px]="mousePosition.x - 150"
+    [style.top.px]="mousePosition.y - 150"
+    [style.width.px]="300"
+    [style.height.px]="300">
+  </div>
+}

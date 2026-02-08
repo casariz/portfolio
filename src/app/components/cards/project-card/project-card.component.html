@@ -1,0 +1,55 @@
+<div
+    class="project-card group card-glass rounded-xl overflow-hidden transition-all duration-300">
+    <div class="relative overflow-hidden">
+        <img [src]="project.image" alt="" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        </div>
+    </div>
+
+    <div class="p-6">
+        <h3
+            class="text-xl font-bold text-slate-800 dark:text-white mb-3 group-hover:text-emerald-600 dark:group-hover:text-teal-300 transition-colors duration-200">
+            {{ project.title }}
+        </h3>
+        <p class="text-slate-600 dark:text-gray-300 mb-4 leading-relaxed">{{ project.description }}</p>
+
+        <div class="flex flex-wrap gap-2 mb-4">
+            @for (tech of project.technologies; track tech) {
+            <span class="tag-primary">
+                {{ tech }}
+            </span>
+            }
+        </div>
+
+        <div class="flex gap-4"> @if (isSimpleGithubUrl()) {
+            <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-2 text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-200">
+                <lucide-angular [img]="githubIcon" class="w-5 h-5"></lucide-angular>
+                <span>{{ t().projects.repository }}</span>
+            </a>
+            }@if (isMultipleGithubUrl()) {
+            @if (frontendUrl) {
+            <a [href]="frontendUrl" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-2 text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-200">
+                <lucide-angular [img]="githubIcon" class="w-5 h-5"></lucide-angular>
+                <span>{{ t().projects.frontend }}</span>
+            </a>
+            }
+            @if (backendUrl) {
+            <a [href]="backendUrl" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-2 text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-200">
+                <lucide-angular [img]="githubIcon" class="w-5 h-5"></lucide-angular>
+                <span>{{ t().projects.backend }}</span>
+            </a>
+            }
+            } @if (project.liveUrl) {
+            <a [href]="project.liveUrl" target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-2 text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-200">
+                <lucide-angular [img]="externalLinkIcon" class="w-5 h-5"></lucide-angular>
+                <span>Demo</span>
+            </a>
+            }
+        </div>
+    </div>
+</div>

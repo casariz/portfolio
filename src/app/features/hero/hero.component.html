@@ -1,0 +1,49 @@
+<section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+  <!-- Mouse interactivo -->
+
+  <div class="text-center z-10 px-4">
+    <div class="animate-fade-in-up">
+      <h1 class="text-5xl md:text-7xl font-bold text-slate-800 dark:text-white mb-3">{{ t().hero.greeting }}
+        <span class="gradient-title">
+          {{ t().hero.title }}</span>
+      </h1>
+      <h1 class="text-3xl font-bold">
+        <span class="gradient-title">
+          &#64;casariz
+        </span>
+      </h1>
+      <p class="text-xl md:text-2xl text-slate-600 dark:text-gray-300 max-w-2xl mx-auto mt-4 mb-8">{{ t().hero.description }}
+      </p>
+      <div class="flex justify-center space-x-6 mb-12">
+        @for (contact of listContact; track contact) {
+        <a [href]="contact.link" target="_blank" rel="noopener noreferrer"
+          class="text-2xl text-slate-600 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-colors duration-200 hover:scale-110 transform">
+          <lucide-angular [img]="contact.icon" class="w-8 h-8"></lucide-angular>
+        </a>
+        }
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button (click)="scrollToSection('projects')"
+          class="btn-gradient-primary">{{ t().hero.viewProjects }}
+        </button>
+        <button (click)="scrollToSection('contact')"
+          class="border-2 border-slate-800 dark:border-white text-slate-800 dark:text-white px-8 py-3 rounded-full font-semibold hover:bg-slate-800 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-all duration-200 hover:scale-105 transform">
+          {{ t().hero.contactMe }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <button (click)="scrollToSection('experience')">
+      <lucide-angular [img]="ChevronDown"
+        class="lucide lucide-chevron-down text-slate-800 dark:text-white w-8 h-8"></lucide-angular>
+    </button>
+  </div>
+</section>
+
+
+<app-experience></app-experience>
+<app-projects></app-projects>
+<app-skills></app-skills>
+<app-about></app-about>
+<app-contact></app-contact>

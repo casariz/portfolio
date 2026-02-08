@@ -1,0 +1,25 @@
+<section id="experience" #experience class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+        <div>
+            <app-section-title [beforeGradient]="t().experience.title" [gradientText]="t().experience.titleHighlight"></app-section-title>
+            <div class="relative" appScrollReveal animationClass="fade-in-up" [delay]="200">
+                <div
+                    class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-emerald-500 via-teal-500 to-cyan-500 dark:from-teal-500 dark:via-cyan-500 dark:to-emerald-500 rounded-full">
+                </div> @for (exp of experiences(); track exp; let i = $index) {
+                <!-- Use the card-experience component to display each experience -->
+                <app-card-experience [experience]="exp" [index]="i"></app-card-experience>
+                }
+            </div>
+            <div class="mt-12 text-center space-y-4">
+                <button (click)="downloadCV()"
+                    class="btn-gradient-primary inline-flex items-center gap-2">
+                    <lucide-angular [img]="downloadIcon"></lucide-angular>
+                    {{ t().experience.downloadCV }}
+                </button>
+                <p class="text-slate-600 dark:text-gray-300 text-sm">
+                    {{ t().experience.downloadText }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
